@@ -17,6 +17,9 @@ public class CategoryRequest {
     private String description;
     @JsonProperty("preview")
     private Long previewImage;
+    private String link;
+    @JsonProperty("button_text")
+    private String buttonText;
     private List<Long> gallery;
     private List<Long> products;
     private List<Long> reviews;

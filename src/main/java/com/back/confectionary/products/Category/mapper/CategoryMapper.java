@@ -18,6 +18,8 @@ public class CategoryMapper {
     public Category toCategory(CategoryRequest categoryRequest) {
         return Category.builder()
                 .name(categoryRequest.getName())
+                .link(categoryRequest.getLink())
+                .buttonText(categoryRequest.getButtonText())
                 .description(categoryRequest.getDescription())
                 .gallery(categoryRequest.getGallery() == null ? null : galleryItemRepository.findAllById(categoryRequest.getGallery()))
                 .preview(categoryRequest.getPreviewImage() != null ? galleryItemRepository.findById(categoryRequest.getPreviewImage())

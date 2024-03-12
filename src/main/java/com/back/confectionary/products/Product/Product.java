@@ -4,6 +4,7 @@ import com.back.confectionary.products.Category.Category;
 import com.back.confectionary.products.GalleryItem.GalleryItem;
 import com.back.confectionary.products.Review.Review;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -27,8 +28,10 @@ public class Product {
     private String productType;
     private Long price;
     @CreationTimestamp
+    @JsonProperty("created_at")
     private Date createdAt;
     @UpdateTimestamp
+    @JsonProperty("updated_at")
     private Date updatedAt;
     @ManyToOne
     @JoinColumn(name = "category_id")
