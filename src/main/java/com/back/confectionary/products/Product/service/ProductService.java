@@ -10,4 +10,5 @@ public interface ProductService {
     List<Product> createProductAll(List<ProductRequest> productRequests);
     Product getById(Long id);
 
+    void deleteProduct(String id);
 }

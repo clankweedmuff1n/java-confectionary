@@ -14,6 +14,11 @@ import java.util.List;
 public class CategoryController {
     private final CategoryService categoryService;
 
+    @GetMapping("/link/{link}")
+    private Category getCategoryByLink(@PathVariable String link) {
+        return categoryService.getByLink(link);
+    }
+
     @GetMapping("/all")
     private List<Category> getAllCategories() {
         return categoryService.getAll();
