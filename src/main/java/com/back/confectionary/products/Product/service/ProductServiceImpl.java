@@ -23,8 +23,16 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.saveAll(productRequests.stream().map(mapper::toProduct).toList());
     }
 
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
+
     public Product getById(Long id) {
         return productRepository.findById(id)
                 .orElse(null);
+    }
+
+    public void deleteProduct(String id) {
+        productRepository.deleteById(Long.valueOf(id));
     }
 }

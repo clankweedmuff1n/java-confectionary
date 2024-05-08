@@ -28,7 +28,7 @@ class ConfectionaryApplicationTests {
     private final JdbcTemplate jdbcTemplate;
     private final RestTemplate restTemplate;
     private final ObjectMapper mapper;
-    private final String baseUrl = "http://localhost:8080/api/v1";
+    private final String baseUrl = "http://localhost:8000/api/v1";
 
     @AfterEach
     void afterEach() {

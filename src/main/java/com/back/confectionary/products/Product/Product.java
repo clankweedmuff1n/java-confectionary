@@ -25,8 +25,15 @@ public class Product {
     private Long id;
     private String name;
     private String description;
+    @JsonProperty("product_type")
     private String productType;
     private Long price;
+    @Column(unique = true)
+    private String link;
+    @ElementCollection
+    private List<String> details;
+    @ElementCollection
+    private List<String> composition;
     @CreationTimestamp
     @JsonProperty("created_at")
     private Date createdAt;

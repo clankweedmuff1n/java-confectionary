@@ -65,6 +65,11 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.findAll();
     }
 
+    public Category getByLink(String link) {
+        return categoryRepository.findByLink(link)
+                .orElse(null);
+    }
+
     public Category getByProduct(Product product) {
         return null;
     }

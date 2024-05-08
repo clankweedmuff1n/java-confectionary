@@ -15,9 +15,12 @@ import java.util.List;
 public class ProductRequest {
     private String name;
     private String description;
-    @JsonProperty("type")
+    @JsonProperty("product_type")
     private String productType;
     private Long price;
+    private String link;
+    private List<String> details;
+    private List<String> composition;
     @JsonProperty("category_id")
     private Long categoryId;
     /*private List<GalleryItemRequest> gallery;

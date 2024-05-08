@@ -1,6 +1,8 @@
 package com.back.confectionary.auth.user;
 
 import com.back.confectionary.auth.user.token.Token;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,7 +26,9 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue
     private  Integer id;
+    @JsonProperty(value = "first_name")
     private String firstname;
+    @JsonProperty(value = "last_name")
     private String lastname;
     @Column(unique = true)
     private String email;
@@ -34,6 +38,7 @@ public class User implements UserDetails {
     private Role role;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Token> tokens;
 
     @Override
